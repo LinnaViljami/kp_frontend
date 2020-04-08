@@ -1,31 +1,18 @@
 import React, { Component } from 'react'
-import Table from './Table'
+import './MainMenu.css'
 
 class App extends Component {
     render() {
-        const characters = [
-            {
-                name: 'Charlie',
-                job: 'Janitor',
-            },
-            {
-                name: 'Mac',
-                job: 'Bouncer',
-            },
-            {
-                name: 'Dee',
-                job: 'Aspring actress',
-            },
-            {
-                name: 'Dennis',
-                job: 'Bartender',
-            },
-        ]
 
         return (
-            <div className="container">
-                <Table characterData={characters} />
+            <div className="main-menu-container">
+
+                <button type="button" className="btn btn-primary">Terve</button>
+                <button type="button" className="btn btn-primary">Terve2</button>
+
+
             </div>
+
         )
     }
 }

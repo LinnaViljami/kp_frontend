@@ -30,7 +30,7 @@ class Table extends Component {
         const { characterData } = this.props
 
         return (
-            <table>
+            <table className="table table-dark">
                 <TableHeader />
                 <TableBody characterData={characterData}/>
             </table>
