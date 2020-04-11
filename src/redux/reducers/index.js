@@ -1,3 +1,3 @@
 import { combineReducers } from "redux";
-import mainMenuButtons from './mainMenuButtons'
-export default combineReducers({mainMenuButtons});
+import navigation from './navigation'
+export default combineReducers({navigation});

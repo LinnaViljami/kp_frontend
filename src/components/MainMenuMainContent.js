@@ -1,33 +1,32 @@
 import React from 'react'
 import '../styles/MainMenu.scss'
 import { connect } from "react-redux";
-import { startNewGame } from "../redux/actions";
+import { startNewGame, toCurrentGames, toSettings } from "../redux/actions";
 
 
 const MainMenuMainContent = (props) => {
-    const isGameStartedToText = (gameStatus) => {
-        if (gameStatus){
-            return "Game is started"
-        }
-        else {
-            return "Game not started"
-        }
-    };
+
 
     return (
         <div className="main-menu-main-content">
-            <button className="btn btn-lg btn-primary" onClick={props.startNewGame}>
-                Start a new game
+            <button className="main-menu-button" onClick={props.startNewGame}>
+                Uusi peli
+            </button>
+            <button className="main-menu-button" onClick={props.toCurrentGames}>
+                Jatka peliä
+            </button>
+            <button className="main-menu-button" onClick={props.toSettings}>
+                Asetukset
             </button>
             <div>
-                {isGameStartedToText(props.isGameStarted)}
+                {props.currentWindow}
             </div>
         </div>
     );
 
 };
 
-const mapStateToProps = state =>  ({isGameStarted: state.mainMenuButtons.isGameStarted});
+const mapStateToProps = state =>  ({currentWindow: state.navigation.currentWindow});
 
 
-export default connect(mapStateToProps, {startNewGame})(MainMenuMainContent);
+export default connect(mapStateToProps, {startNewGame, toCurrentGames, toSettings})(MainMenuMainContent);

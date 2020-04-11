@@ -1,1 +1,3 @@
 export const START_NEW_GAME = 'START_NEW_GAME';
+export const TO_CURRENT_GAMES = 'TO_CURRENT_GAMES';
+export const TO_SETTINGS = 'TO_SETTINGS';
