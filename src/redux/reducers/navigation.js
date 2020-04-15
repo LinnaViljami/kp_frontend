@@ -1,4 +1,5 @@
-import {START_NEW_GAME, TO_SETTINGS, TO_CURRENT_GAMES} from '../actionTypes'
+import {START_NEW_GAME, TO_SETTINGS, TO_CURRENT_GAMES, GO_BACK} from '../actionTypes'
+import history from './../../history';
 
 export const windowDescriptions = {
     mainMenu: "Valikko",
@@ -14,6 +15,7 @@ const initialState = {
 export default function (state = initialState, action) {
     switch (action.type) {
         case START_NEW_GAME: {
+            history.push('/esa')
             return {
                 ...state,
                 currentWindow: "newGame"
@@ -31,6 +33,18 @@ export default function (state = initialState, action) {
                 currentWindow: "currentGames"
             }
         }
+        case GO_BACK:
+            let newUrl = action.payload.newUrl;
+
+            if(newUrl == null){
+                console.log(newUrl);
+                history.push("/");
+            }
+            else {
+                console.log("no undefined", newUrl);
+                history.push(action.payload.newUrl);
+            }
+            return state;
         default:
             return state;
 

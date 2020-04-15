@@ -7,4 +7,9 @@
   @extend .btn-lg;
   @extend .btn-block;
   border-radius: 0rem;
+  align-self: flex-end;
+}
+
+.App {
+  height: 100%;
 }

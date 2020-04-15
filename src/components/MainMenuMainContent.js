@@ -2,6 +2,7 @@ import React from 'react'
 import '../styles/MainMenu.scss'
 import { connect } from "react-redux";
 import { startNewGame, toCurrentGames, toSettings } from "../redux/actions";
+import './BackArrowButton'
 
 
 const MainMenuMainContent = (props) => {
@@ -18,9 +19,6 @@ const MainMenuMainContent = (props) => {
             <button className="main-menu-button" onClick={props.toSettings}>
                 Asetukset
             </button>
-            <div>
-                {props.currentWindow}
-            </div>
         </div>
     );
 

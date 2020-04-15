@@ -1,25 +1,19 @@
 import React, { Component } from 'react'
+import './styles/Common.scss'
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Redirect
+    BrowserRouter as Router
 } from "react-router-dom";
+import Routes from './Routes';
 
-import MainMenuContainer from './components/MainMenuContainer'
 class App extends Component {
     render() {
 
         return (
             <Router>
-                <Switch>
-                    <Route path="/home">
-                    <MainMenuContainer/>
-                    </Route>
-                    <Route path="/">
-                        <Redirect to="/home" />
-                    </Route>
-                </Switch>
+                <div className="App">
+                <Routes/>
+                </div>
+
             </Router>
 
         )
