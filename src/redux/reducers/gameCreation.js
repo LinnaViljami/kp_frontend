@@ -16,6 +16,7 @@ const initialState = {
 export default function (state = initialState, action) {
     switch (action.type) {
         case SELECT_PLAYER: {
+            console.log("select player occurs with: ", state.players[action.payload.playerId].isSelected)
             return {
                 ...state,
                 players: {

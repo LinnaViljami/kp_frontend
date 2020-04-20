@@ -34,7 +34,7 @@ export default function (state = initialState, action) {
             }
         }
         case GO_BACK:
-            let newUrl = action.payload.newUrl;
+            /*let newUrl = action.payload.newUrl;
 
             if(newUrl == null){
                 console.log(newUrl);
@@ -43,7 +43,8 @@ export default function (state = initialState, action) {
             else {
                 console.log("no undefined", newUrl);
                 history.push(action.payload.newUrl);
-            }
+            }*/
+            history.goBack();
             return state;
         default:
             return state;
