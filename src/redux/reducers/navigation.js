@@ -15,6 +15,7 @@ const initialState = {
 export default function (state = initialState, action) {
     switch (action.type) {
         case START_NEW_GAME: {
+            console.log("new game start reducer");
             history.push('/esa')
             return {
                 ...state,

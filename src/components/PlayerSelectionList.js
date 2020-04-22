@@ -1,32 +1,49 @@
 import React from 'react'
 import { connect } from "react-redux";
-import {selectPlayer} from '../redux/actions'
+import {selectPlayer, fetchUsers} from '../redux/actions'
 import "./../styles/PlayerSelection.scss"
 const PlayerSelectionList = (props) => {
-    const getListItemClass = (isSelected) => {
-        if (isSelected) {
-            return "list-group-item active"
-        }
-        else {}
-            return "list-group-item"
-    };
-    const listItems = Object.keys(props.players).map(playerId =>
-        (
-            <li
-                key={playerId}
-                className={getListItemClass(props.players[playerId].isSelected)}
-                onClick={() => props.selectPlayer(playerId)}
-            >
-                {props.players[playerId].name}
-            </li>));
+
+
+
+
   return (
+      <div>
       <ul>
-          {listItems}
+          {listItems(props.players, props.selectPlayer)}
       </ul>
+      </div>
   );
 };
 
 const mapStateToProps = state =>
-    ({players: state.gameCreation.players});
+    (state.gameCreation);
 
-export default connect(mapStateToProps, {selectPlayer})(PlayerSelectionList);
+export default connect(mapStateToProps, {selectPlayer, fetchUsers})(PlayerSelectionList);
+
+
+const renderContent = (props) => {
+
+};
+
+const getListItemClass = (isSelected) => {
+    if (isSelected) {
+        return "list-group-item active"
+    }
+    else {}
+    return "list-group-item"
+};
+
+const listItems = (players, playerSelectionAction) => (players.map(player =>
+{
+
+
+    return (
+        <li
+            key={player.id}
+            className={getListItemClass(player.selected)}
+            onClick={() => playerSelectionAction(player.id)}
+        >
+            {player.firstName}
+        </li>);
+}));

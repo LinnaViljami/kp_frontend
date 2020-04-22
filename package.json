@@ -1,4 +1,5 @@
 {
+  "proxy": "http://localhost:8080",
   "name": "kp",
   "version": "0.1.0",
   "private": true,
@@ -6,6 +7,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
     "jquery": "^3.5.0",
     "node-sass": "^4.13.1",
@@ -18,6 +20,8 @@
     "react-scripts": "3.4.0",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
+    "redux-promise-middleware": "^6.1.2",
+    "redux-thunk": "^2.3.0",
     "save-dev": "0.0.1-security"
   },
   "scripts": {
